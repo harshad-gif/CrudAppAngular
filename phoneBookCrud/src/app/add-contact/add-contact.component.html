@@ -1,0 +1,34 @@
+<div class="container mt-5">
+    <div class="card mx-auto" style="width: 48rem;">
+        <form #contactForm="ngForm" (ngSubmit)="addContact(contactForm)">
+            <h1 class="text-center" *ngIf="txt">Add Contact</h1>
+            <h1 class="text-center" *ngIf="!txt">Update Contact</h1>
+            <div class="form-group">
+              <label for="">First Name</label>
+              <input type="text" [(ngModel)]="phone.firstName" name="firstName" class="form-control mt-1" id="" aria-describedby="" placeholder="Enter First Name">
+            </div>
+            <div class="form-group">
+                <label for="" class="mt-2">Last Name</label>
+                <input type="text" [(ngModel)]="phone.lastName" name="lastName" class="form-control mt-2" id="" aria-describedby="" placeholder="Enter Last Name">
+            </div>
+
+            <div class="form-group">
+                <label for="" class="mt-2">Phone Number</label>
+                <input type="number" [(ngModel)]="phone.number" name="number" class="form-control mt-2" id="" aria-describedby="" placeholder="Enter Phone Number">
+            </div>
+            <div class="d-grid gap-2" *ngIf="btn1">
+                <button type="submit" class="btn btn-primary  mt-3">Submit</button>
+            </div>
+
+            
+            
+            <div class="d-grid gap-2" *ngIf="!btn1">
+                <button type="submit" class="btn btn-primary  mt-3">Update</button>
+            </div>
+
+        
+            
+
+          </form>
+    </div>
+</div>

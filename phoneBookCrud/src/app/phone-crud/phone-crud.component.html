@@ -1,0 +1,51 @@
+<div class="container mt-5">
+    <div class="card">
+        <h1 class="display-2 text-center" style="font-weight: bold;">
+            <i class="fa fa-address-book" aria-hidden="true" style="margin-right: 25px;"></i>
+            Phone Book App</h1> 
+        <div class="row">
+            <div class="col-sm-9 mx-auto">
+                <h1 style="margin-left: 155px;">Contacts</h1>
+            </div>
+
+            <div class="col-sm-3">
+                <button class="btn btn-primary btn-lg" routerLink="/add">+Add Contact</button>
+            </div>
+        </div>    
+        <div class="col-sm-9 mx-auto mt-3">
+          <form action="" class="">
+            
+            <input type="text" name="" id="" class="form-control" placeholder="🔍search for contact by last name...." style="text-align: center;">
+           </form>
+        </div>
+       
+
+       <div class="row" *ngFor="let data of contact">
+        <div class="col-sm-9 mx-auto">
+          <div class="card mt-4 mb-4">
+            
+              <div class="card-body">
+                <button class="btn btn-danger btn-lg" style="float: right;">
+                    <i class="fa fa-trash" aria-hidden="true" (click)="deleteContact(data.contactId)"></i>
+                </button>
+
+                <button class="btn btn-warning btn-lg" style="float: right;margin-right: 10px;">
+                  <i class="fa fa-edit" aria-hidden="true" (click)="update(data.contactId)"></i>
+                </button>
+              
+              <h1 class="card-title">{{data.firstName}}   {{data.lastName}}</h1>
+              
+              <p class="" style="font-size:xx-large; font-weight: lighter;color:gray;">
+                <i class="fa fa-phone" style="color:gray;"></i>{{data.number}}
+              </p>
+              
+               
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+</div>
